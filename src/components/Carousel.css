@@ -1,0 +1,98 @@
+.carousel-container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 10px auto;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.video-wrapper {
+  position: relative;
+  width: 440px;
+  height: 620px;
+  overflow: hidden;
+  border-radius: 10px;
+  margin: 20px;
+}
+
+.slide-video {
+  margin: px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.swiper-slide {
+  transition: transform 0.7s ease;
+  height: 87%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 5px !important ;/* Reduced gap between slides */
+}
+
+/* Center video will be larger */
+.swiper-slide-active .slide-video {
+  transform: scale(1);
+  
+}
+
+/* Smaller size for inactive videos */
+.swiper-slide-next .slide-video,
+.swiper-slide-prev .slide-video {
+  opacity: 0.8;
+  transform: scale(0.9);
+  margin: 10px;
+}
+
+/* Remove the arrow buttons */
+.arrow-button {
+  display: none;
+}
+
+/* Play Pause Button inside video */
+.play-pause-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Show play/pause button on hover */
+.video-wrapper:hover .play-pause-btn {
+  display: flex;
+}
+.heart-icon {
+  font-size: 36px; /* Adjust size */
+  cursor: pointer;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.heart-icon.liked {
+  transform: scale(1.3); /* Enlarges the heart when liked */
+}
+
+/* Add some positioning for the heart button */
+.like-button-container {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  z-index: 10; /* Ensures the heart is above the video */
+  pointer-events: all; /* Allow click events */
+}
+
